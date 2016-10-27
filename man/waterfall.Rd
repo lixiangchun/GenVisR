@@ -14,9 +14,12 @@ waterfall(x, mainRecurCutoff = 0, mainGrid = TRUE, mainXlabel = FALSE,
   geneOrder = NULL, plotSamples = NULL, sampOrder = NULL,
   maxGenes = NULL, rmvSilent = FALSE, fileType = "MAF",
   variant_class_order = NULL, out = "plot")
+
+## filtering x for waterfall
+filterMaf(x)
 }
 \arguments{
-\item{x}{Object of class data frame representing annotated mutations. The
+\item{x}{Object of class data frame (or object returned by maftools::read.maf(...)) representing annotated mutations. The
 data frame supplied must have one of the following sets of column names
 ("Tumor_Sample_Barcode", "Hugo_Symbol", "Variant_Classification") for
 fileType="MAF", ("sample","gene_name","trv_type") for fileType="MGI" or

@@ -121,6 +121,10 @@ waterfall <- function(x, mainRecurCutoff=0, mainGrid=TRUE, mainXlabel=FALSE,
                       sampOrder=NULL, maxGenes=NULL, rmvSilent=FALSE,
                       fileType='MAF', variant_class_order=NULL, out="plot")
 {
+	##--------- Added by Li Xiangchun ----------##
+	if (!is.data.frame(x) && !data.table::is.data.table(x)) {
+		x <- filterMaf(x)
+	}
     # Perform data quality checks and conversions
     inputDat <- waterfall_qual(x, clinData, mutBurden, file_type=fileType,
                                label_col=mainLabelCol)
