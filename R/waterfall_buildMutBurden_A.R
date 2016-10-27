@@ -27,7 +27,7 @@ waterfall_buildMutBurden_A <- function(x, coverage_space, layers=NULL)
                                 drop=FALSE)
 
     # add y label
-    y_label <- ylab('Mutations per MB')
+    y_label <- ylab("Mutations \nper MB")
 
     # additional parameters
     if(!is.null(layers))
